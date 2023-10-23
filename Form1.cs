@@ -187,43 +187,24 @@ namespace FigurUppgifter
                     DrawRect(250 - x * 25, 200 - x * 25, x * 50 + 250, x * 50 + 150);
                 }
             }
-            if (figurNr == 11)
-            {
-                SetColor(Color.Black);
-                for (int x = 0; x < 4; x++)
-                {
-                    DrawRect(250 - x * 25, 200 - x * 25, x * 50 + 250, x * 50 + 150);
-                }
-            }
-
-
-
-
-
             if (figurNr == 14)
             {
                 SetColor(Color.Red);
+                int IsHorizontal = 1;
 
-                int positionX = 250;
-                int positionY = 200;
-                int circleDiameter = 40;
-                int circleSpacing = 10;  // Space between circles, assuming it's 10 for clarity.
-
-                // For drawing the vertical part of the "L"
-                for (int i = 0; i < 7; i++)
+                for (int j = 0; j < 2; j++)
                 {
-                    for (int j = 0; j < 2; j++)
+                    for (int i = 0; i < 6; i++)
                     {
-                        FillOval(positionX + (j * (circleDiameter + circleSpacing)), positionY + (i * (circleDiameter + circleSpacing)), circleDiameter, circleDiameter);
-                    }
-                }
-
-                // For drawing the horizontal base of the "L"
-                for (int i = 0; i < 2; i++)
-                {
-                    for (int j = 0; j < 3; j++)
-                    {
-                        FillOval(positionX + (2 * (circleDiameter + circleSpacing)) + (j * (circleDiameter + circleSpacing)), positionY + (5 + i) * (circleDiameter + circleSpacing), circleDiameter, circleDiameter);
+                        IsHorizontal = 1;
+                        if (i > 3)
+                        {
+                            IsHorizontal = 2;
+                        }
+                        for (int x = 0; x < IsHorizontal; x++)
+                        {
+                            FillOval(250 + (j * 50) + x * 100, 200 + (i * 50), 40, 40);
+                        }
                     }
                 }
             }
