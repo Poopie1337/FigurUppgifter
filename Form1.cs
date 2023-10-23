@@ -186,6 +186,15 @@ namespace FigurUppgifter
                 {
                     DrawRect(250 - x * 25, 200 - x * 25, x * 50 + 250, x * 50 + 150);
                 }
+
+
+
+
+
+
+
+
+
             }
 
 
